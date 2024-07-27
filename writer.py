@@ -2,11 +2,12 @@ import openai
 import requests
 import time
 import anthropic
-from settings import *
 import google.generativeai as genai
 from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 
+# This returns all paid API calls as blank strings. Useful for testing / debugging.
+block_paid_apis = False
 
 class OpenAIWriter:
     def __init__(
@@ -38,7 +39,7 @@ class MistralWriter:
         system_context="You are an automated assistant. Your top goal is to answer questions to the best of your ability"
     ):
         self.client = MistralClient(
-            api_key="keyhere"
+            api_key=""
         )
         self.system_context = system_context
 

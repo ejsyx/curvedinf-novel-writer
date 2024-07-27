@@ -1,5 +1,5 @@
 from writer import *
-
+# from writer import MistralWriter
 # Port for local Llama.cpp
 port = 5050
 
@@ -49,7 +49,7 @@ many sections of the book which are from the perspective of other characters, es
 friends and the antagonist."""
 
 # The chat model that will be used
-writer = Gemini10Writer(system_context)
+writer = MistralWriter(system_context)
 
 # The number of paragraphs to write at a time.
 paragraphs_per_block = 5
@@ -57,5 +57,4 @@ paragraphs_per_block = 5
 # Disables the acceptance prompt at the end of each prompt and instead makes the process autonomous
 auto_write = True
 
-# This returns all paid API calls as blank strings. Useful for testing / debugging.
-block_paid_apis = False
+
